@@ -16,7 +16,7 @@ create_page() {
   if [ "$guard" = "mfa" ]; then
     cat > "app/$dir/page.tsx" << EOF
 import { MFAGuard } from "@/components/auth/MFAGuard";
-import $component from "@/pages/$import_path";
+import $component from "@/views/$import_path";
 
 export default function Page() {
   return <MFAGuard><$component /></MFAGuard>;
@@ -24,7 +24,7 @@ export default function Page() {
 EOF
   elif [ "$guard" = "none" ]; then
     cat > "app/$dir/page.tsx" << EOF
-import $component from "@/pages/$import_path";
+import $component from "@/views/$import_path";
 
 export default function Page() {
   return <$component />;
@@ -83,7 +83,7 @@ create_page "terms" "TermsPage" "TermsPage" "none"
 # Patient Portal pages
 mkdir -p app/patient-portal/login
 cat > app/patient-portal/login/page.tsx << 'EOF'
-import { PatientAuthPage } from "@/pages/patient";
+import { PatientAuthPage } from "@/views/patient";
 
 export default function Page() {
   return <PatientAuthPage />;
@@ -93,7 +93,7 @@ echo "  Created app/patient-portal/login/page.tsx"
 
 mkdir -p app/patient-portal/dashboard
 cat > app/patient-portal/dashboard/page.tsx << 'EOF'
-import { PatientDashboard } from "@/pages/patient";
+import { PatientDashboard } from "@/views/patient";
 
 export default function Page() {
   return <PatientDashboard />;
@@ -103,7 +103,7 @@ echo "  Created app/patient-portal/dashboard/page.tsx"
 
 mkdir -p app/patient-portal/appointments
 cat > app/patient-portal/appointments/page.tsx << 'EOF'
-import { PatientAppointments } from "@/pages/patient";
+import { PatientAppointments } from "@/views/patient";
 
 export default function Page() {
   return <PatientAppointments />;
@@ -113,7 +113,7 @@ echo "  Created app/patient-portal/appointments/page.tsx"
 
 mkdir -p app/patient-portal/messages
 cat > app/patient-portal/messages/page.tsx << 'EOF'
-import { PatientMessages } from "@/pages/patient";
+import { PatientMessages } from "@/views/patient";
 
 export default function Page() {
   return <PatientMessages />;
@@ -123,7 +123,7 @@ echo "  Created app/patient-portal/messages/page.tsx"
 
 mkdir -p app/patient-portal/documents
 cat > app/patient-portal/documents/page.tsx << 'EOF'
-import { PatientDocuments } from "@/pages/patient";
+import { PatientDocuments } from "@/views/patient";
 
 export default function Page() {
   return <PatientDocuments />;
@@ -133,7 +133,7 @@ echo "  Created app/patient-portal/documents/page.tsx"
 
 mkdir -p app/patient-portal/profile
 cat > app/patient-portal/profile/page.tsx << 'EOF'
-import { PatientProfile } from "@/pages/patient";
+import { PatientProfile } from "@/views/patient";
 
 export default function Page() {
   return <PatientProfile />;
@@ -144,7 +144,7 @@ echo "  Created app/patient-portal/profile/page.tsx"
 # Super Admin pages
 mkdir -p app/super-admin
 cat > app/super-admin/page.tsx << 'EOF'
-import { SuperAdminDashboard } from "@/pages/super-admin";
+import { SuperAdminDashboard } from "@/views/super-admin";
 
 export default function Page() {
   return <SuperAdminDashboard />;
@@ -154,7 +154,7 @@ echo "  Created app/super-admin/page.tsx"
 
 mkdir -p app/super-admin/organizations
 cat > app/super-admin/organizations/page.tsx << 'EOF'
-import { SuperAdminOrganizations } from "@/pages/super-admin";
+import { SuperAdminOrganizations } from "@/views/super-admin";
 
 export default function Page() {
   return <SuperAdminOrganizations />;
@@ -164,7 +164,7 @@ echo "  Created app/super-admin/organizations/page.tsx"
 
 mkdir -p app/super-admin/administrators
 cat > app/super-admin/administrators/page.tsx << 'EOF'
-import { SuperAdminAdministrators } from "@/pages/super-admin";
+import { SuperAdminAdministrators } from "@/views/super-admin";
 
 export default function Page() {
   return <SuperAdminAdministrators />;
@@ -174,7 +174,7 @@ echo "  Created app/super-admin/administrators/page.tsx"
 
 mkdir -p app/super-admin/teams
 cat > app/super-admin/teams/page.tsx << 'EOF'
-import { SuperAdminTeams } from "@/pages/super-admin";
+import { SuperAdminTeams } from "@/views/super-admin";
 
 export default function Page() {
   return <SuperAdminTeams />;
@@ -184,7 +184,7 @@ echo "  Created app/super-admin/teams/page.tsx"
 
 mkdir -p app/super-admin/settings
 cat > app/super-admin/settings/page.tsx << 'EOF'
-import { SuperAdminSettings } from "@/pages/super-admin";
+import { SuperAdminSettings } from "@/views/super-admin";
 
 export default function Page() {
   return <SuperAdminSettings />;
@@ -195,7 +195,7 @@ echo "  Created app/super-admin/settings/page.tsx"
 mkdir -p "app/super-admin/structure/[id]"
 cat > "app/super-admin/structure/[id]/page.tsx" << 'EOF'
 import { MFAGuard } from "@/components/auth/MFAGuard";
-import SuperAdminStructureDetailPage from "@/pages/SuperAdminStructureDetailPage";
+import SuperAdminStructureDetailPage from "@/views/SuperAdminStructureDetailPage";
 
 export default function Page() {
   return <MFAGuard><SuperAdminStructureDetailPage /></MFAGuard>;
@@ -205,7 +205,7 @@ echo "  Created app/super-admin/structure/[id]/page.tsx"
 
 # Not found page
 cat > app/not-found.tsx << 'EOF'
-import NotFound from "@/pages/NotFound";
+import NotFound from "@/views/NotFound";
 
 export default function NotFoundPage() {
   return <NotFound />;

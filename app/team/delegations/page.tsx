@@ -1,5 +1,5 @@
 import { MFAGuard } from "@/components/auth/MFAGuard";
-import DelegationsPage from "@/pages/DelegationsPage";
+import DelegationsPage from "@/views/DelegationsPage";
 
 export default function Page() {
   return <MFAGuard><DelegationsPage /></MFAGuard>;

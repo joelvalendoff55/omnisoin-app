@@ -34,7 +34,7 @@ import {
 } from '@/components/ui/tooltip';
 import { FileAttenteActionButtons } from './FileAttenteActionButtons';
 import { WaitingTimeCell } from './WaitingTimeCell';
-import type { FileAttenteEntry } from '@/pages/FileAttentePage';
+import type { FileAttenteEntry } from '@/views/FileAttentePage';
 
 interface FileAttenteTableProps {
   entries: FileAttenteEntry[];

@@ -1,4 +1,4 @@
-import TermsPage from "@/pages/TermsPage";
+import TermsPage from "@/views/TermsPage";
 
 export default function Page() {
   return <TermsPage />;

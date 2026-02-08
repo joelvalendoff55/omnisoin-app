@@ -56,7 +56,7 @@ function getWaitingTime(arrivalTime: string): { minutes: number; formatted: stri
   };
 }
 import { toast } from 'sonner';
-import type { FileAttenteEntry } from '@/pages/FileAttentePage';
+import type { FileAttenteEntry } from '@/views/FileAttentePage';
 
 interface FileAttenteDrawerProps {
   entry: FileAttenteEntry | null;

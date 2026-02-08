@@ -1,4 +1,4 @@
-import { PatientMessages } from "@/pages/patient";
+import { PatientMessages } from "@/views/patient";
 
 export default function Page() {
   return <PatientMessages />;

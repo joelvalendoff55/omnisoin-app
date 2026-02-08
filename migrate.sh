@@ -49,7 +49,7 @@ echo "Done."
 
 # 5. Add 'use client' to all components, hooks, and pages that use React hooks
 echo "[5/9] Adding 'use client' directive to client components..."
-for f in $(find src/components src/hooks src/pages -name '*.tsx' -o -name '*.ts' 2>/dev/null); do
+for f in $(find src/components src/hooks src/views -name '*.tsx' -o -name '*.ts' 2>/dev/null); do
   if ! head -1 "$f" | grep -q '"use client"'; then
     if grep -qE 'useState|useEffect|useRef|useCallback|useMemo|useContext|useReducer|onClick|onChange|onSubmit|useRouter|useSearchParams|usePathname' "$f"; then
       sed -i '1s/^/"use client";\n\n/' "$f"

@@ -1,4 +1,4 @@
-import LegalAidPage from "@/pages/LegalAidPage";
+import LegalAidPage from "@/views/LegalAidPage";
 
 export default function Page() {
   return <LegalAidPage />;

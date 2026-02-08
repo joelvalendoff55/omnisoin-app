@@ -1,4 +1,4 @@
-import { SuperAdminTeams } from "@/pages/super-admin";
+import { SuperAdminTeams } from "@/views/super-admin";
 
 export default function Page() {
   return <SuperAdminTeams />;

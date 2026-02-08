@@ -1,5 +1,5 @@
 import { MFAGuard } from "@/components/auth/MFAGuard";
-import FileAttentePage from "@/pages/FileAttentePage";
+import FileAttentePage from "@/views/FileAttentePage";
 
 export default function Page() {
   return <MFAGuard><FileAttentePage /></MFAGuard>;
