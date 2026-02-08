@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { usePatientAuth } from '@/hooks/usePatientAuth';
 import { PatientLayout } from '@/components/patient-portal/PatientLayout';

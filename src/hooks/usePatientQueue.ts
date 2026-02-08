@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { useStructureId } from '@/hooks/useStructureId';

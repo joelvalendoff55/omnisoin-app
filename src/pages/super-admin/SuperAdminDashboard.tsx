@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';

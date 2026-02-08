@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Users, Clock, Calendar, CheckSquare, TrendingUp, TrendingDown } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -55,7 +55,7 @@ function StatCard({ title, value, subtitle, icon: Icon, href, loading, color, te
   );
 
   if (href) {
-    return <Link to={href}>{content}</Link>;
+    return <Link href={href}>{content}</Link>;
   }
 
   return content;

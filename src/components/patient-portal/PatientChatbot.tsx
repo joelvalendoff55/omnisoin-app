@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { MessageCircle, X, Send, Loader2, Bot, User, Calendar, MessageSquare, FileText, HelpCircle, Mic, MicOff, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -269,7 +271,7 @@ export function PatientChatbot() {
   }, [isOpen]);
 
   const streamChat = useCallback(async (userMessage: string) => {
-    const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/patient-chatbot`;
+    const CHAT_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/patient-chatbot`;
     
     const userMsg: Message = {
       id: crypto.randomUUID(),
@@ -286,7 +288,7 @@ export function PatientChatbot() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
         },
         body: JSON.stringify({
           messages: [...messages.filter(m => m.id !== 'welcome'), userMsg].map(m => ({

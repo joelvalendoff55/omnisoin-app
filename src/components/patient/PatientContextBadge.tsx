@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from "next/navigation";
 import { User, ChevronDown, ChevronUp, AlertTriangle } from 'lucide-react';
 import { usePatientConsultationContext } from '@/hooks/usePatientConsultationContext';
 import { useAntecedents } from '@/hooks/useAntecedents';
@@ -48,7 +50,7 @@ function getSexLabel(sex: string | null): string {
 }
 
 export function PatientContextBadge() {
-  const location = useLocation();
+  const pathname = usePathname();
   const { context, isActive } = usePatientConsultationContext();
   const [isExpanded, setIsExpanded] = useState(true);
   
@@ -57,11 +59,11 @@ export function PatientContextBadge() {
 
   // Check if current route should show the badge
   const shouldShow = useMemo(() => {
-    const path = location.pathname;
+    const path = pathname;
     // Check exact matches or encounter routes
     if (path.startsWith('/encounter/')) return true;
     return VISIBLE_ROUTES.some(route => path === route || path.startsWith(route + '/'));
-  }, [location.pathname]);
+  }, [pathname]);
 
   // Get allergies (type = 'allergique')
   const allergies = useMemo(() => {

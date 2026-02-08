@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import DashboardLayout from '@/components/layout/DashboardLayout';
@@ -13,7 +15,7 @@ import { AlertTriangle, Stethoscope } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function IPAPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const { isAdmin, isCoordinator, isPractitioner, loading: roleLoading } = useRole();
 

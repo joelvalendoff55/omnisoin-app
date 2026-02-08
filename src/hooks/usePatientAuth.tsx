@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 import { verifyPatientAccess, getPatientStructureId } from '@/lib/patientPortal';
 

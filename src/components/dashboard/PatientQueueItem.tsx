@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from '@/lib/utils';
 import { Clock, User } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';

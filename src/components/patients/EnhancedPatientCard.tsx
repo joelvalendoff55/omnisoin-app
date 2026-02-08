@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { PatientStatusBadge } from './PatientStatusBadge';
 import { PatientQuickActions, PatientContextMenu } from './PatientQuickActions';

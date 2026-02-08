@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useMemo, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import DashboardLayout from '@/components/layout/DashboardLayout';
@@ -64,7 +66,7 @@ export interface FileAttenteEntry {
 }
 
 export default function FileAttentePage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { structureId } = useStructureId();
   const [searchTerm, setSearchTerm] = useState('');
   const [priorityFilter, setPriorityFilter] = useState<string>('all');

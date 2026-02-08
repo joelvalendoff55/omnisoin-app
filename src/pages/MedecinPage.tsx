@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useMemo, useCallback, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { useRole } from '@/hooks/useRole';
 import NoAccessPage from '@/components/layout/NoAccessPage';
@@ -49,7 +51,7 @@ interface MedecinAlert {
 
 export default function MedecinPage() {
   const { isAdmin, isPractitioner, loading } = useRole();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [isGeneratingReflection, setIsGeneratingReflection] = useState(false);
   const [clinicalReflection, setClinicalReflection] = useState<ClinicalReflection | null>(null);
   const [rawReflectionContent, setRawReflectionContent] = useState<string | null>(null);

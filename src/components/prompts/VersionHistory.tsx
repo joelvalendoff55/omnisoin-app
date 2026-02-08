@@ -1,3 +1,5 @@
+"use client";
+
 import { PromptVersion } from '@/lib/prompts';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

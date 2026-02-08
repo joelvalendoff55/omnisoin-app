@@ -1,3 +1,5 @@
+"use client";
+
 import { SystemPrompt, getCategoryLabel, getCategoryColor } from '@/lib/prompts';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';

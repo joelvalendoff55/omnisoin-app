@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState, useCallback, useMemo } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useStructureId } from '@/hooks/useStructureId';
@@ -43,7 +45,7 @@ export default function InboxPage() {
   const { user, loading: authLoading } = useAuth();
   const { isAdmin, isCoordinator, isAssistant, loading: roleLoading } = useRole();
   const { structureId, loading: structureLoading } = useStructureId();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [messages, setMessages] = useState<InboxMessage[]>([]);

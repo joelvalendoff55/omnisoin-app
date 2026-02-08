@@ -1,3 +1,5 @@
+"use client";
+
 import { TeamMember, getJobTitleLabel, getSpecialtyLabel } from '@/lib/team';
 import { TeamMemberTasksList } from '@/components/tasks/TasksList';
 import {

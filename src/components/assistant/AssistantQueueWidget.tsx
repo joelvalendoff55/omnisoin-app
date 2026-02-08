@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Users, Clock, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -56,7 +56,7 @@ export function AssistantQueueWidget({ entries, loading }: AssistantQueueWidgetP
             File d'attente du jour
           </CardTitle>
           <Button variant="ghost" size="sm" asChild>
-            <Link to="/queue" className="gap-1">
+            <Link href="/queue" className="gap-1">
               Voir tout
               <ArrowRight className="h-4 w-4" />
             </Link>

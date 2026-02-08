@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useState, useRef, useCallback, ReactNode, useEffect } from 'react';
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import { uploadTranscriptAudio, createTranscript } from '@/lib/transcripts';

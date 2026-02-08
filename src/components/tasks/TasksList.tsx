@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { Plus, CheckCircle, Calendar, User, AlertTriangle } from 'lucide-react';

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Stethoscope, ChevronDown, ChevronUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

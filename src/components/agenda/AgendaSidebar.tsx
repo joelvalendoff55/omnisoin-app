@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from 'react';
 import { isSameDay } from 'date-fns';
 import AgendaMiniCalendar from './AgendaMiniCalendar';

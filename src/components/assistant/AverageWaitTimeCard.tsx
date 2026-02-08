@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState, useMemo } from 'react';
 import { Clock, TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { cn } from '@/lib/utils';

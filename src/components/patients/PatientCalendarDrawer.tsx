@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useMemo } from 'react';
 import { format, isSameDay, startOfMonth, endOfMonth, eachDayOfInterval, startOfWeek, endOfWeek, addMonths, subMonths } from 'date-fns';
 import { fr } from 'date-fns/locale';

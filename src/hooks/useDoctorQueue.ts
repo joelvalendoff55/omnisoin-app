@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import { QueueEntry, fetchQueue, updateQueueEntry } from '@/lib/queue';

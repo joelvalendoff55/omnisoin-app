@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { format } from 'date-fns';
 import { FileDown, Calendar, Scale, FileText, AlertTriangle } from 'lucide-react';

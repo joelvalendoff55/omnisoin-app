@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState, useMemo, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { Clock } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
@@ -26,7 +28,7 @@ import { format } from 'date-fns';
 const Index = () => {
   const { user, loading } = useAuth();
   const { isPractitioner, isAssistant, isCoordinator } = useRole();
-  const navigate = useNavigate();
+  const router = useRouter();
   const { todayStats, weeklyActivity, loading: dashboardLoading, refresh } = useMSPDashboard();
   const { entries: queueEntries, loading: queueLoading } = usePatientQueue();
   const { appointments, loading: appointmentsLoading } = useAppointments({ viewMode: 'day' });

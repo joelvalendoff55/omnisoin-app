@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { useMFA, useMFARequired } from '@/hooks/useMFA';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';

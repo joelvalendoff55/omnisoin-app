@@ -1,5 +1,7 @@
+"use client";
+
 import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { 
   Search, 
   User, 
@@ -46,7 +48,7 @@ interface FlatResult {
 }
 
 export default function GlobalSearch() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);

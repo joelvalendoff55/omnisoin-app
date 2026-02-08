@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { useStructureId } from '@/hooks/useStructureId';
 import { useAuth } from '@/hooks/useAuth';

@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useStructureId } from '@/hooks/useStructureId';
 import DashboardLayout from '@/components/layout/DashboardLayout';
@@ -75,7 +77,7 @@ const MOCK_PRACTITIONERS = [
 ];
 
 export default function BillingPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const { structureId } = useStructureId();
   const [activeTab, setActiveTab] = useState('dashboard');

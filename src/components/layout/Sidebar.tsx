@@ -1,4 +1,6 @@
-import { Link, useLocation } from 'react-router-dom';
+"use client";
+
+import Link from "next/link";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useOrgRole } from '@/hooks/useOrgRole';
@@ -110,7 +112,7 @@ const hiddenRoutes = [
 ];
 
 export default function Sidebar() {
-  const location = useLocation();
+  const pathname = usePathname();
   const { signOut } = useAuth();
   const { isAdmin, isCoordinator, isPractitioner, loading: roleLoading } = useRole();
   const { isOrgAdminOrOwner, isOrgOwner, loading: orgRoleLoading } = useOrgRole();
@@ -139,7 +141,7 @@ export default function Sidebar() {
 
   const isItemActive = (itemPath: string) => {
     const [path, query] = itemPath.split('?');
-    const currentPath = location.pathname;
+    const currentPath = pathname;
     const currentSearch = location.search;
 
     if (path !== currentPath) return false;
@@ -173,7 +175,7 @@ export default function Sidebar() {
       {/* Header */}
       <div className="p-3 border-b border-sidebar-border">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="p-1.5 bg-sidebar-primary/20 rounded-lg flex-shrink-0">
               <HeartPulse className="h-5 w-5 text-sidebar-primary" />
             </div>

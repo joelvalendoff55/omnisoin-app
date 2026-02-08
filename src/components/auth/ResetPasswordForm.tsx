@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { HeartPulse, AlertCircle, CheckCircle, Loader2, KeyRound, ArrowLeft, RefreshCw } from 'lucide-react';
 import { toast } from 'sonner';
 import { z } from 'zod';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import ForgotPasswordDialog from './ForgotPasswordDialog';
 
 const passwordSchema = z
@@ -27,7 +29,7 @@ export default function ResetPasswordForm({ hasValidSession, onRequestNewReset }
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [forgotDialogOpen, setForgotDialogOpen] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const validateInputs = () => {
     setError('');
@@ -115,7 +117,7 @@ export default function ResetPasswordForm({ hasValidSession, onRequestNewReset }
               </p>
               <div className="flex flex-col gap-2">
                 <Button asChild className="w-full" data-testid="back-to-login">
-                  <Link to="/auth">
+                  <Link href="/auth">
                     <ArrowLeft className="h-4 w-4 mr-2" />
                     Retour à la connexion
                   </Link>

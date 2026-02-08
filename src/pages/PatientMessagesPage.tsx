@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { format, formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';

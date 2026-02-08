@@ -1,5 +1,7 @@
+"use client";
+
 import { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { Bell, AlertTriangle, Calendar, MessageSquare, X, Clock, UserX } from 'lucide-react';
@@ -33,7 +35,7 @@ export default function DashboardAlertsWidget({
   loading,
   onDismiss,
 }: DashboardAlertsWidgetProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const sortedAlerts = useMemo(() => {
     const priorityOrder = { urgent: 0, warning: 1, info: 2 };

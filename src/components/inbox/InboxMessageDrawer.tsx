@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import {
   Sheet,
   SheetContent,
@@ -53,7 +55,7 @@ export function InboxMessageDrawer({
   canAssign,
   onMessageUpdated,
 }: InboxMessageDrawerProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [patients, setPatients] = useState<Patient[]>([]);
   const [patientSearch, setPatientSearch] = useState('');
   const [loadingPatients, setLoadingPatients] = useState(false);

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
 import { Clock, Pause, Play, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';

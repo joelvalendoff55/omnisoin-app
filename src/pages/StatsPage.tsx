@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useStatsDashboard } from '@/hooks/useStatsDashboard';
@@ -55,7 +57,7 @@ export default function StatsPage() {
   const { user, loading: authLoading } = useAuth();
   const { isAdmin, isCoordinator, loading: roleLoading } = useRole();
   const { data: stats, loading: statsLoading, error } = useStatsDashboard();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Redirect non-admin/coordinator
   useEffect(() => {

@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useACIIndicators } from '@/hooks/useACIIndicators';
@@ -18,7 +20,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 
 export default function CoordinatricePage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const { isAdmin, isCoordinator, loading: roleLoading } = useRole();
   const { indicators, loading: indicatorsLoading } = useACIIndicators();

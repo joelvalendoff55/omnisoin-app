@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { UserPlus, Users, Calendar, Plus } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -53,7 +53,7 @@ export function AssistantQuickActions() {
               className="h-auto py-4 flex-col items-center gap-2"
               asChild
             >
-              <Link to={action.href}>
+              <Link href={action.href}>
                 <action.icon className="h-6 w-6" />
                 <div className="text-center">
                   <span className="font-medium block">{action.label}</span>

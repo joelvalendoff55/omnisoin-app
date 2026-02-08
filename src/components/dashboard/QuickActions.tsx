@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { UserPlus, Users, Calendar, CheckSquare, Plus } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -62,7 +62,7 @@ export function QuickActions() {
               asChild
               data-testid={`quick-action-${action.label.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <Link to={action.href}>
+              <Link href={action.href}>
                 <div className="flex items-center gap-2 w-full">
                   <action.icon className="h-4 w-4" />
                   <span className="font-medium">{action.label}</span>

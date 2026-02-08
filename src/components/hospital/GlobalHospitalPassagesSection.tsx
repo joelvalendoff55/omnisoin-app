@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -25,7 +27,7 @@ import {
 } from 'lucide-react';
 import { format, formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAllHospitalPassages } from '@/hooks/useAllHospitalPassages';
 import { CopyToClipboard } from '@/components/shared/CopyToClipboard';
 import {
@@ -43,7 +45,7 @@ type PeriodFilter = '24h' | '7d' | '30d' | 'all';
 type RiskFilter = 'eleve' | 'modere' | 'standard' | 'all';
 
 export default function GlobalHospitalPassagesSection() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [period, setPeriod] = useState<PeriodFilter>('7d');
   const [riskFilter, setRiskFilter] = useState<RiskFilter>('all');
 

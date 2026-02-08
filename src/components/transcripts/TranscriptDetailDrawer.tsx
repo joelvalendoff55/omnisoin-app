@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
 import {
   Drawer,
@@ -61,7 +63,7 @@ import {
   ShieldX,
 } from 'lucide-react';
 import { toast } from 'sonner';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import {
   detectLanguage,
   LANGUAGE_LABELS,
@@ -118,7 +120,7 @@ export function TranscriptDetailDrawer({
   onOpenChange,
   onRefresh,
 }: TranscriptDetailDrawerProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user } = useAuth();
   const { structureId } = useStructureId();
   const { isAdmin, isCoordinator, isPractitioner } = useRole();

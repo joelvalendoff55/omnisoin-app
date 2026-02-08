@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Phone, ArrowRight, User } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -38,7 +38,7 @@ export function AssistantCallbackWidget({ items, loading }: AssistantCallbackWid
             Appels à rappeler
           </CardTitle>
           <Button variant="ghost" size="sm" asChild>
-            <Link to="/inbox" className="gap-1">
+            <Link href="/inbox" className="gap-1">
               Voir tout
               <ArrowRight className="h-4 w-4" />
             </Link>

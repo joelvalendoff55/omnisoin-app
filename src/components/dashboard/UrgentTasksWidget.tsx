@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { AlertTriangle, Clock, ChevronRight, CheckSquare, Calendar } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -151,7 +153,7 @@ export function UrgentTasksWidget() {
             )}
           </CardTitle>
           <Button variant="ghost" size="sm" asChild className="text-xs">
-            <Link to="/tasks">Voir toutes</Link>
+            <Link href="/tasks">Voir toutes</Link>
           </Button>
         </div>
       </CardHeader>

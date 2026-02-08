@@ -1,3 +1,5 @@
+"use client";
+
 import { TeamMember, getJobTitleLabel, getSpecialtyLabel } from '@/lib/team';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';

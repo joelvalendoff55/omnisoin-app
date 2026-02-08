@@ -1,8 +1,10 @@
+"use client";
+
 import { useEffect, useState } from 'react';
 import { Clock, Users, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { useStructureId } from '@/hooks/useStructureId';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -95,7 +97,7 @@ export default function DashboardQueueWidget() {
               </div>
             </div>
             <Button asChild variant="outline" size="sm" className="w-full">
-              <Link to="/queue" className="gap-2">
+              <Link href="/queue" className="gap-2">
                 Voir la file
                 <ArrowRight className="h-4 w-4" />
               </Link>

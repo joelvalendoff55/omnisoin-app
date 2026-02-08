@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from "next/navigation";
 import { Bug, X, Loader2, Camera, Upload } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -25,10 +27,10 @@ export function BugReportButton() {
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
   
-  const location = useLocation();
+  const pathname = usePathname();
   const { toast } = useToast();
   
-  const currentUrl = `${window.location.origin}${location.pathname}${location.search}`;
+  const currentUrl = `${window.location.origin}${pathname}${location.search}`;
 
   const handleScreenshotChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

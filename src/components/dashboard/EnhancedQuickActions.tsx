@@ -1,4 +1,6 @@
-import { useNavigate } from 'react-router-dom';
+"use client";
+
+import { useRouter } from "next/navigation";
 import { 
   UserPlus, 
   CalendarPlus, 
@@ -91,7 +93,7 @@ export default function EnhancedQuickActions({
   shortcuts = DEFAULT_SHORTCUTS,
   compact = false,
 }: EnhancedQuickActionsProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Keyboard shortcuts
   if (typeof window !== 'undefined') {

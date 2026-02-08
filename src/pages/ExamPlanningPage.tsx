@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
 import { format, addMonths, subMonths, addWeeks, subWeeks } from 'date-fns';
 import { fr } from 'date-fns/locale';

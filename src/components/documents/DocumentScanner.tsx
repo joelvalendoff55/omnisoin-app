@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef, useCallback } from 'react';
 import { Camera, Upload, X, Loader2, FileImage } from 'lucide-react';
 import { Button } from '@/components/ui/button';

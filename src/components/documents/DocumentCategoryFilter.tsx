@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { FileText, Image, FileType, X } from 'lucide-react';

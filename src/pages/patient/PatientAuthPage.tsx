@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { usePatientAuth } from '@/hooks/usePatientAuth';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -9,7 +11,7 @@ import { Heart, Mail, Key, Eye, EyeOff, Loader2, Shield, Clock, FileText } from 
 import { cn } from '@/lib/utils';
 
 export default function PatientAuthPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { signIn, isAuthenticated, loading: authLoading } = usePatientAuth();
   
   const [email, setEmail] = useState('');

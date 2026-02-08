@@ -1,5 +1,5 @@
 import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Button } from '@/components/ui/button';
 import LegalFooter from '@/components/layout/LegalFooter';
 
@@ -7,7 +7,7 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <Link to="/">
+        <Link href="/">
           <Button variant="ghost" className="mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Retour
@@ -178,7 +178,7 @@ export default function PrivacyPage() {
               Vous pouvez gérer vos préférences via notre bandeau de consentement.
             </p>
             <p className="mt-2">
-              Pour plus d'informations, consultez notre <Link to="/legal" className="text-primary hover:underline">politique de cookies</Link>.
+              Pour plus d'informations, consultez notre <Link href="/legal" className="text-primary hover:underline">politique de cookies</Link>.
             </p>
           </section>
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { APPOINTMENT_TYPE_OPTIONS, STATUS_OPTIONS } from '@/lib/appointments';

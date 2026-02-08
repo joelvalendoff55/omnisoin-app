@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, Calendar as CalendarIcon } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -35,7 +37,7 @@ interface DayAppointments {
 }
 
 export function MiniCalendarWidget() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { structureId, loading: structureLoading } = useStructureId();
   const [currentWeekStart, setCurrentWeekStart] = useState(() => 
     startOfWeek(new Date(), { weekStartsOn: 1 })

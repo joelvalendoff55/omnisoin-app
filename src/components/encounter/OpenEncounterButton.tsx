@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { Play, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -39,7 +41,7 @@ export function OpenEncounterButton({
   defaultMode = 'solo',
   label = 'Ouvrir l\'épisode',
 }: OpenEncounterButtonProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { createEncounter, createFromQueue } = useCreateEncounter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedMode, setSelectedMode] = useState<EncounterMode>(defaultMode);

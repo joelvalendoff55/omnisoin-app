@@ -1,4 +1,6 @@
-import { Link, useLocation } from 'react-router-dom';
+"use client";
+
+import Link from "next/link";
 import { useAuth } from '@/hooks/useAuth';
 import { 
   LayoutDashboard, 
@@ -30,15 +32,15 @@ const navItems: NavItem[] = [
 ];
 
 export function SuperAdminSidebar() {
-  const location = useLocation();
+  const pathname = usePathname();
   const { signOut } = useAuth();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const isActive = (path: string) => {
     if (path === '/super-admin') {
-      return location.pathname === '/super-admin';
+      return pathname === '/super-admin';
     }
-    return location.pathname.startsWith(path);
+    return pathname.startsWith(path);
   };
 
   return (

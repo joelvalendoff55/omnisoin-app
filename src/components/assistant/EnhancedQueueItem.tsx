@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { Clock, User, AlertTriangle, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';

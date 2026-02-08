@@ -7,7 +7,7 @@ import { useRole } from '@/hooks/useRole';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Shield, Lock, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 
 interface HealthDataGuardProps {
   children: ReactNode;
@@ -125,7 +125,7 @@ export function HealthDataGuard({
             </ul>
             <div className="pt-4">
               <Button asChild variant="outline">
-                <Link to="/settings">
+                <Link href="/settings">
                   Accéder aux paramètres
                 </Link>
               </Button>

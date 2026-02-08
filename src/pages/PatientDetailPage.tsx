@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState, useCallback } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useStructureId } from '@/hooks/useStructureId';
@@ -51,7 +53,7 @@ import { cn } from '@/lib/utils';
 
 export default function PatientDetailPage() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const { isAdmin, isCoordinator, loading: roleLoading } = useRole();
   const { structureId, loading: structureLoading } = useStructureId();

@@ -1,5 +1,7 @@
+"use client";
+
 import { ReactNode, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { usePatientAuth } from '@/hooks/usePatientAuth';
 import { useAdminPatientContext } from '@/hooks/useAdminPatientContext';
 import { AdminPatientSelector } from './AdminPatientSelector';
@@ -43,8 +45,8 @@ const navItems = [
 export function PatientLayout({ children }: PatientLayoutProps) {
   const { patient, signOut } = usePatientAuth();
   const { isAdminMode, selectedPatient } = useAdminPatientContext();
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSignOut = () => {
@@ -86,7 +88,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
                   <ArrowLeft className="w-5 h-5" />
                 </Button>
               )}
-              <Link to="/patient-portal/dashboard" className="flex items-center gap-2">
+              <Link href="/patient-portal/dashboard" className="flex items-center gap-2">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
                   <Heart className="w-5 h-5 text-white" />
                 </div>
@@ -100,7 +102,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-1">
               {navItems.map((item) => {
-                const isActive = location.pathname === item.path;
+                const isActive = pathname === item.path;
                 return (
                   <Link
                     key={item.path}
@@ -154,7 +156,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
                   <DropdownMenuSeparator />
                   {!isAdminMode && (
                     <DropdownMenuItem asChild>
-                      <Link to="/patient-portal/profile" className="cursor-pointer">
+                      <Link href="/patient-portal/profile" className="cursor-pointer">
                         <User className="w-4 h-4 mr-2" />
                         Mon profil
                       </Link>
@@ -186,7 +188,7 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           <div className="md:hidden border-t border-border/50 bg-white/95 backdrop-blur-lg">
             <nav className="px-4 py-3 space-y-1">
               {navItems.map((item) => {
-                const isActive = location.pathname === item.path;
+                const isActive = pathname === item.path;
                 return (
                   <Link
                     key={item.path}
@@ -227,8 +229,8 @@ export function PatientLayout({ children }: PatientLayoutProps) {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
             <p>© 2024 OmniSoin - Espace Patient Sécurisé</p>
             <div className="flex items-center gap-4">
-              <Link to="/privacy" className="hover:text-foreground transition-colors">Confidentialité</Link>
-              <Link to="/legal" className="hover:text-foreground transition-colors">Mentions légales</Link>
+              <Link href="/privacy" className="hover:text-foreground transition-colors">Confidentialité</Link>
+              <Link href="/legal" className="hover:text-foreground transition-colors">Mentions légales</Link>
             </div>
           </div>
         </div>

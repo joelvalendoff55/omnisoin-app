@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -59,7 +61,7 @@ export function PatientQuickActions({
   onSelectChange,
   showCheckbox = false,
 }: PatientQuickActionsProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { structureId } = useStructureId();
   const [isOpeningEncounter, setIsOpeningEncounter] = useState(false);
 

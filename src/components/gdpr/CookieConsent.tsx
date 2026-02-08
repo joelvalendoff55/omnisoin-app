@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
@@ -121,7 +123,7 @@ export default function CookieConsent() {
                     Nous utilisons des cookies pour améliorer votre expérience. 
                     Les cookies essentiels sont nécessaires au fonctionnement du site. 
                     Vous pouvez personnaliser vos préférences.{' '}
-                    <Link to="/privacy" className="text-primary hover:underline">
+                    <Link href="/privacy" className="text-primary hover:underline">
                       En savoir plus
                     </Link>
                   </p>

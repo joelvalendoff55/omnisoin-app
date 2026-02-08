@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { User, Clock, ChevronRight, Users } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -119,7 +121,7 @@ export function RecentPatientsWidget() {
             )}
           </CardTitle>
           <Button variant="ghost" size="sm" asChild className="text-xs">
-            <Link to="/patients">Voir tous</Link>
+            <Link href="/patients">Voir tous</Link>
           </Button>
         </div>
       </CardHeader>

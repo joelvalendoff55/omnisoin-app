@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState, useCallback } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useStructureId } from '@/hooks/useStructureId';
@@ -70,7 +72,7 @@ export default function TranscriptsPage() {
   const { user, loading: authLoading } = useAuth();
   const { loading: roleLoading } = useRole();
   const { structureId, loading: structureLoading } = useStructureId();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [transcripts, setTranscripts] = useState<PatientTranscript[]>([]);

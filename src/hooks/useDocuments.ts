@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
 import { useStructureId } from './useStructureId';
 import { useAuth } from './useAuth';

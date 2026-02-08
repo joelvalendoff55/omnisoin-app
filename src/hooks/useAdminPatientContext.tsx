@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { useOrgRole } from '@/hooks/useOrgRole';

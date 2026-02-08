@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
@@ -32,7 +32,7 @@ export default function DashboardKPICard({
   color = 'primary',
 }: DashboardKPICardProps) {
   return (
-    <Link to={href}>
+    <Link href={href}>
       <Card
         data-testid={testId}
         className="hover:shadow-md transition-all cursor-pointer hover:border-primary/30 group"

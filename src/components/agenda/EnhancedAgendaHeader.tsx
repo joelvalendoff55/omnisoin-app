@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from 'react';
 import { format, addDays, addWeeks, addMonths, subDays, subWeeks, subMonths, startOfWeek, endOfWeek, startOfMonth, endOfMonth } from 'date-fns';
 import { fr } from 'date-fns/locale';

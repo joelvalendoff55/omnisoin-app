@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { useNavigate, useSearchParams, Link } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import { Button } from '@/components/ui/button';
@@ -86,7 +88,7 @@ export default function Auth() {
   const [lockoutCountdown, setLockoutCountdown] = useState(0);
   
   const { signIn, signUp, user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [searchParams] = useSearchParams();
 
   // Entrance animation
@@ -741,11 +743,11 @@ export default function Auth() {
                       </div>
                       <p className="text-xs text-muted-foreground">
                         En créant un compte, vous acceptez nos{' '}
-                        <Link to="/terms" className="text-primary hover:underline">
+                        <Link href="/terms" className="text-primary hover:underline">
                           CGU
                         </Link>{' '}
                         et notre{' '}
-                        <Link to="/privacy" className="text-primary hover:underline">
+                        <Link href="/privacy" className="text-primary hover:underline">
                           Politique de confidentialité
                         </Link>.
                       </p>

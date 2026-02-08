@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useMemo } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import NoAccessPage from '@/components/layout/NoAccessPage';

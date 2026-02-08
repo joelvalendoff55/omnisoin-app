@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
@@ -129,7 +131,7 @@ export function ClinicalSuggestionsDrawer({
       }
 
       const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/clinical-suggestions`,
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/clinical-suggestions`,
         {
           method: 'POST',
           headers: {

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
 import { AdvancedFilters, defaultAdvancedFilters } from '@/components/patients/AdvancedPatientFilters';
 import { ViewMode } from '@/components/patients/PatientViewToggle';

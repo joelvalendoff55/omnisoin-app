@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from "next/navigation";
 import { Plus, RefreshCw } from 'lucide-react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Button } from '@/components/ui/button';

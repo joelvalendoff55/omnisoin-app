@@ -1,4 +1,6 @@
-import { useNavigate } from 'react-router-dom';
+"use client";
+
+import { useRouter } from "next/navigation";
 import { CheckCheck, Bell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -23,7 +25,7 @@ export function NotificationsList({
   onDelete,
   onClose,
 }: NotificationsListProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleNotificationClick = (notification: Notification) => {
     if (notification.link) {

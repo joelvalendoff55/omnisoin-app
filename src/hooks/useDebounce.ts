@@ -1,3 +1,5 @@
+"use client";
+
 import { useCallback, useRef } from 'react';
 
 export function useDebouncedCallback<T extends (...args: any[]) => any>(

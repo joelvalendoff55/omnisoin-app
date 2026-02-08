@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from 'react';
 import { useRole } from '@/hooks/useRole';
 import { useFeatureFlags } from '@/hooks/useFeatureFlags';

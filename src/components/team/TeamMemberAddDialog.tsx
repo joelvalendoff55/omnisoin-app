@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { useTeamMembers as useTeamMembersList } from '@/hooks/useTeams';
 import { useStructureId } from '@/hooks/useStructureId';

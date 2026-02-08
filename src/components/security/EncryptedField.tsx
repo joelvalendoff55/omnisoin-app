@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useCallback } from 'react';
 import { Lock, Eye, EyeOff, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';

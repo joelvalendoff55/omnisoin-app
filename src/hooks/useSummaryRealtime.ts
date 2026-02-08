@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useCallback, useRef } from 'react';
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import type { TranscriptSummary } from '@/lib/summaries';

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -104,7 +106,7 @@ export default function WritingAssistantSection() {
   }, [messages]);
 
   const streamChat = useCallback(async (userMessage: string) => {
-    const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/coordination-writing-assistant`;
+    const CHAT_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/coordination-writing-assistant`;
     
     const allMessages = [
       ...messages.map(m => ({ role: m.role, content: m.content })),
@@ -115,7 +117,7 @@ export default function WritingAssistantSection() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
       },
       body: JSON.stringify({ messages: allMessages }),
     });

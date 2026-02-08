@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useCallback, ReactNode } from 'react';
 import { 
   ChevronDown, 

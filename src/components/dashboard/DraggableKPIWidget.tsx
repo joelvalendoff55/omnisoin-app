@@ -1,3 +1,5 @@
+"use client";
+
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { GripVertical, TrendingUp, TrendingDown, Minus, X } from 'lucide-react';

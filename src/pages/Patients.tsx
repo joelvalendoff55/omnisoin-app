@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useStructureId } from '@/hooks/useStructureId';
@@ -51,7 +53,7 @@ export default function Patients() {
   const { user, loading: authLoading } = useAuth();
   const { isPractitioner, loading: roleLoading } = useRole();
   const { structureId, loading: structureLoading } = useStructureId();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // User preferences (persisted)
   const {

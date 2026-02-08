@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
 import { Activity, Heart, Thermometer, Droplets, Check, AlertCircle } from 'lucide-react';
 import { Input } from '@/components/ui/input';

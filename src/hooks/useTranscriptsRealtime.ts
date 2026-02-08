@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useCallback } from 'react';
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import { toast } from 'sonner';

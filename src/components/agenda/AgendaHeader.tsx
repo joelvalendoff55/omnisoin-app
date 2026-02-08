@@ -1,3 +1,5 @@
+"use client";
+
 import { format, addDays, addWeeks, subDays, subWeeks, startOfWeek, endOfWeek } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { ChevronLeft, ChevronRight, Plus, Calendar as CalendarIcon } from 'lucide-react';

@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useACIIndicators } from '@/hooks/useACIIndicators';
@@ -12,7 +14,7 @@ import { SyncButtons } from '@/components/coordination/SyncButtons';
 import { AlertTriangle } from 'lucide-react';
 
 export default function CoordinationPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const { isAdmin, isCoordinator, loading: roleLoading } = useRole();
   const { indicators, loading: indicatorsLoading } = useACIIndicators();

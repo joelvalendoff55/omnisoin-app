@@ -1,6 +1,8 @@
+"use client";
+
 import { useState, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -175,7 +177,7 @@ function getRoleBadgeVariant(role: string): 'default' | 'secondary' | 'outline' 
 }
 
 export default function SuperAdminPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedOrgs, setExpandedOrgs] = useState<Set<string>>(new Set());

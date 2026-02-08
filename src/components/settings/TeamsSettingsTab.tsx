@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useMemo } from 'react';
 import { useTeams, useTeamMembers } from '@/hooks/useTeams';
 import { Team, TeamFormData, TEAM_COLORS, DEFAULT_TEAMS } from '@/lib/teams';

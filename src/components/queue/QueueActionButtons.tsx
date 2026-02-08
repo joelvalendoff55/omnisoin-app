@@ -1,3 +1,5 @@
+"use client";
+
 import { Phone, Play, CheckCircle, XCircle, UserX, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { canTransition } from '@/lib/patientJourney';

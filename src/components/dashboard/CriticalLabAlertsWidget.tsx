@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { AlertTriangle, Activity, ChevronRight, FileText, TrendingUp, TrendingDown, AlertCircle } from 'lucide-react';
@@ -174,7 +176,7 @@ export function CriticalLabAlertsWidget() {
 
                     <div className="flex justify-end mt-2">
                       <Button variant="ghost" size="sm" className="h-7 text-xs" asChild>
-                        <Link to={`/patients/${alert.patientId}`}>
+                        <Link href={`/patients/${alert.patientId}`}>
                           Voir le dossier
                           <ChevronRight className="h-3 w-3 ml-1" />
                         </Link>

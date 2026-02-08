@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';

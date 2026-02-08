@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { 
   Stethoscope, 
   Pill, 
@@ -29,7 +31,7 @@ import { QueueEntry } from '@/lib/queue';
 import { toast } from 'sonner';
 
 export default function MedecinDashboard() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const { isAdmin } = useRole();
   const { isDoctor, loading: doctorLoading } = useDoctorPermission();

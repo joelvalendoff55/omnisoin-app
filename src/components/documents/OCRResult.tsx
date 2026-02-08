@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Copy, Check, Calendar, Phone, Mail, CreditCard, Pill, FlaskConical, Stethoscope, FileText, Activity, User, AlertTriangle, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';

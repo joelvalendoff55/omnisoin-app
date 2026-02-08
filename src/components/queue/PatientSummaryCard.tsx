@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { 
   Activity, 
   FileText, 
@@ -151,7 +153,7 @@ export function PatientSummaryCard({
               </div>
             )}
 
-            <Link to={`/patients/${entry.patient_id}`}>
+            <Link href={`/patients/${entry.patient_id}`}>
               <Button variant="ghost" size="sm">
                 <ExternalLink className="h-4 w-4 mr-1" />
                 Dossier
@@ -183,7 +185,7 @@ export function PatientSummaryCard({
               <p className="text-sm text-muted-foreground">{entry.reason || 'Consultation'}</p>
             </div>
           </div>
-          <Link to={`/patients/${entry.patient_id}`}>
+          <Link href={`/patients/${entry.patient_id}`}>
             <Button variant="outline" size="sm">
               <ExternalLink className="h-4 w-4 mr-1" />
               Dossier complet
@@ -310,7 +312,7 @@ export function PatientSummaryCard({
 
             <TabsContent value="historique" className="mt-0">
               <div className="text-center py-8 text-muted-foreground text-sm">
-                <Link to={`/patients/${entry.patient_id}`} className="text-primary hover:underline">
+                <Link href={`/patients/${entry.patient_id}`} className="text-primary hover:underline">
                   Voir l'historique complet
                 </Link>
               </div>
@@ -318,7 +320,7 @@ export function PatientSummaryCard({
 
             <TabsContent value="ordonnances" className="mt-0">
               <div className="text-center py-8 text-muted-foreground text-sm">
-                <Link to={`/patients/${entry.patient_id}`} className="text-primary hover:underline">
+                <Link href={`/patients/${entry.patient_id}`} className="text-primary hover:underline">
                   Voir les traitements
                 </Link>
               </div>

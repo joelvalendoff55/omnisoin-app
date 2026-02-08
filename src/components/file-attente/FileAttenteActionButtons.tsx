@@ -1,3 +1,5 @@
+"use client";
+
 import { Phone, Play, CheckCircle, UserX, Loader2, Clock, RotateCcw, AlertTriangle, Stethoscope, FlaskConical, FolderOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {

@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { Calendar, Clock, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -41,7 +41,7 @@ export default function DashboardAppointmentsWidget() {
           Prochains RDV
         </CardTitle>
         <Button variant="ghost" size="sm" asChild>
-          <Link to="/agenda">Voir tout</Link>
+          <Link href="/agenda">Voir tout</Link>
         </Button>
       </CardHeader>
       <CardContent>

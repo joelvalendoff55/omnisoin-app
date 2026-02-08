@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useSuperAdmin } from '@/hooks/useSuperAdmin';
 import { useAuth } from '@/hooks/useAuth';
@@ -106,7 +108,7 @@ const ROLE_COLORS: Record<string, string> = {
 
 export default function SuperAdminStructureDetailPage() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const { isSuperAdmin, loading: superAdminLoading } = useSuperAdmin();
   const queryClient = useQueryClient();

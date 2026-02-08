@@ -1,3 +1,5 @@
+"use client";
+
 import { useAutoRecording } from '@/hooks/useAutoRecording';
 import { Button } from '@/components/ui/button';
 import { Mic, Square } from 'lucide-react';

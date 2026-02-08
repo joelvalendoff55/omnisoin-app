@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
@@ -94,7 +96,7 @@ async function getVersionsForPrompt(promptId: string): Promise<PromptVersion[]> 
 export default function AdminPromptsPage() {
   const { user, loading: authLoading } = useAuth();
   const { hasRole, loading: roleLoading } = useRole();
-  const navigate = useNavigate();
+  const router = useRouter();
   const queryClient = useQueryClient();
 
   const [editedContents, setEditedContents] = useState<Record<string, string>>({});

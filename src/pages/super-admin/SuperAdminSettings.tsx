@@ -1,3 +1,5 @@
+"use client";
+
 import { SuperAdminLayout } from '@/components/super-admin/SuperAdminLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';

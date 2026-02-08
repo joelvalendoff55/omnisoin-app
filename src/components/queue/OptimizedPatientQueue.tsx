@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { Clock, UserCheck, Stethoscope, CheckCircle2, Bell, AlertTriangle, FolderOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -109,7 +111,7 @@ export function OptimizedPatientQueue({
   isDoctor = false,
   loading = false,
 }: OptimizedPatientQueueProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { structureId } = useStructureId();
   const [actionLoading, setActionLoading] = useState<string | null>(null);
   const [encounterLoading, setEncounterLoading] = useState<string | null>(null);

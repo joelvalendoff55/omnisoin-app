@@ -1,5 +1,7 @@
+"use client";
+
 import { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { Clock, User, MapPin, Phone, ExternalLink, CheckCircle } from 'lucide-react';
@@ -21,7 +23,7 @@ export default function TodayAppointmentsList({
   loading,
   onComplete,
 }: TodayAppointmentsListProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Sort and filter today's appointments
   const sortedAppointments = useMemo(() => {

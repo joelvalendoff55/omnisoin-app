@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useCallback, useRef, useState } from 'react';
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import type { AnamnesisRecord } from '@/types/anamnesis';

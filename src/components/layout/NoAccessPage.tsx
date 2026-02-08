@@ -1,3 +1,5 @@
+"use client";
+
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { AlertTriangle, LogOut } from 'lucide-react';

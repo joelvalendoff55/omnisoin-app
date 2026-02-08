@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useMemo } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import EnhancedAgendaHeader, { ViewMode } from '@/components/agenda/EnhancedAgendaHeader';

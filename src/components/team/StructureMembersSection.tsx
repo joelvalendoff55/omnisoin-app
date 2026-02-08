@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { useStructureMembers } from '@/hooks/useStructureMembers';
 import { useRole } from '@/hooks/useRole';

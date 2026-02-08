@@ -1,4 +1,6 @@
-import { useParams, useNavigate } from 'react-router-dom';
+"use client";
+
+import { useRouter } from "next/navigation";
 import { ArrowLeft, Clock, Calendar, AlertCircle, Loader2, User } from 'lucide-react';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
@@ -17,7 +19,7 @@ import type { EncounterStatus } from '@/types/encounter';
 
 export default function EncounterPage() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+  const router = useRouter();
   const { 
     encounter, 
     loading, 
@@ -40,7 +42,7 @@ export default function EncounterPage() {
       <div className="flex flex-col items-center justify-center min-h-screen gap-4">
         <AlertCircle className="h-12 w-12 text-destructive" />
         <p className="text-lg font-medium">Épisode non trouvé</p>
-        <Button variant="outline" onClick={() => navigate(-1)}>
+        <Button variant="outline" onClick={() => router.back()}>
           <ArrowLeft className="h-4 w-4 mr-2" />
           Retour
         </Button>
@@ -60,7 +62,7 @@ export default function EncounterPage() {
       <header className="sticky top-0 z-10 bg-background border-b">
         <div className="container flex items-center justify-between h-16 px-4">
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
+            <Button variant="ghost" size="icon" onClick={() => router.back()}>
               <ArrowLeft className="h-5 w-5" />
             </Button>
             <div>

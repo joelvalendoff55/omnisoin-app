@@ -1,6 +1,8 @@
+"use client";
+
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Calendar, User, CheckCircle, Clock, AlertTriangle, Trash2, Edit } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';

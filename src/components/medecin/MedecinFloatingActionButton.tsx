@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { Plus, X, FileText, Mic, Mail, Award, UserPlus } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -31,7 +33,7 @@ export function MedecinFloatingActionButton({
   onNewPatient,
 }: MedecinFloatingActionButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const actions: FABAction[] = [
     {

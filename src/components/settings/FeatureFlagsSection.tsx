@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { useStructureId } from '@/hooks/useStructureId';
 import { useFeatureFlags } from '@/hooks/useFeatureFlags';

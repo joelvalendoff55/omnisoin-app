@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import { useToast } from '@/hooks/use-toast';
 import { useStructureId } from '@/hooks/useStructureId';
@@ -32,7 +34,7 @@ export function useOpenEncounter({
   assignedAssistantId,
   defaultMode = 'solo',
 }: UseOpenEncounterOptions): UseOpenEncounterResult {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { toast } = useToast();
   const { structureId } = useStructureId();
   const [isLoading, setIsLoading] = useState(false);

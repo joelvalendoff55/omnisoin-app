@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useStructureId } from '@/hooks/useStructureId';
@@ -53,7 +55,7 @@ export default function DelegationsPage() {
   const { user, loading: authLoading } = useAuth();
   const { isAdmin, loading: roleLoading } = useRole();
   const { structureId, loading: structureLoading } = useStructureId();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [delegations, setDelegations] = useState<Delegation[]>([]);
   const [practitioners, setPractitioners] = useState<UserWithProfile[]>([]);

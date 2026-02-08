@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Plus, RefreshCw } from 'lucide-react';
 import DashboardLayout from '@/components/layout/DashboardLayout';

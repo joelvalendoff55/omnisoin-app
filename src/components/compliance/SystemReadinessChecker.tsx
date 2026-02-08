@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import {
   CheckCircle2,
   XCircle,
@@ -356,7 +356,7 @@ function ReadinessCheckRow({
         {statusBadge[check.status as keyof typeof statusBadge]}
         {check.link && (
           <Button variant="ghost" size="sm" asChild>
-            <Link to={check.link}>
+            <Link href={check.link}>
               <ExternalLink className="h-4 w-4" />
             </Link>
           </Button>

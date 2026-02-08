@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from 'react';
 import { RefreshCw, Keyboard, Command, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';

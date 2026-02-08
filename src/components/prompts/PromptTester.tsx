@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { PromptVersion } from '@/lib/prompts';
 import { Button } from '@/components/ui/button';

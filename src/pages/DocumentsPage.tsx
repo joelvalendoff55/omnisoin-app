@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState, useMemo } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';
 import { useDocuments } from '@/hooks/useDocuments';
@@ -31,7 +33,7 @@ export default function DocumentsPage() {
   const { isAdmin } = useRole();
   const { structureId } = useStructureId();
   const { documents, loading, refetch, addDocument, removeDocument, triggerDocumentOCR } = useDocuments();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Persisted preferences

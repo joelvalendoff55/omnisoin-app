@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useMemo, useEffect } from 'react';
 import { Check, ChevronsUpDown, X, User } from 'lucide-react';
 import { cn } from '@/lib/utils';

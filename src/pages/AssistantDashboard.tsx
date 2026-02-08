@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useMemo, useCallback, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { Clock, Users, Phone, AlertTriangle, Activity, CalendarCheck, ListTodo, BarChart3, FileText, Stethoscope } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import DashboardLayout from '@/components/layout/DashboardLayout';
@@ -26,7 +28,7 @@ import { toast } from 'sonner';
 
 export default function AssistantDashboard() {
   const { user, loading: authLoading } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const {
     queueToday,

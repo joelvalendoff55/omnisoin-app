@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState, useMemo, useCallback } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from "next/navigation";
 import { supabaseWithCustomStorage as supabase } from '@/integrations/supabase/customClient';
 import { useAuth } from '@/hooks/useAuth';
 import { useRole } from '@/hooks/useRole';

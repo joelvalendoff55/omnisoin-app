@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { usePatientAuth } from '@/hooks/usePatientAuth';
 import { useAdminPatientContext } from '@/hooks/useAdminPatientContext';
 import { PatientLayout } from '@/components/patient-portal/PatientLayout';
@@ -142,7 +144,7 @@ export default function PatientDashboard() {
             </div>
             {effectivePatientId && (
               <Button asChild size="lg" className="shadow-lg">
-                <Link to="/patient-portal/appointments">
+                <Link href="/patient-portal/appointments">
                   <Calendar className="w-5 h-5 mr-2" />
                   {isAdminMode ? 'Voir les RDV' : 'Prendre RDV'}
                 </Link>
@@ -223,7 +225,7 @@ export default function PatientDashboard() {
                 <CardDescription>Vos consultations à venir</CardDescription>
               </div>
               <Button variant="ghost" size="sm" asChild>
-                <Link to="/patient-portal/appointments">
+                <Link href="/patient-portal/appointments">
                   Voir tout
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </Link>
@@ -272,7 +274,7 @@ export default function PatientDashboard() {
                   <Calendar className="w-12 h-12 mx-auto mb-3 opacity-50" />
                   <p>Aucun rendez-vous à venir</p>
                 <Button asChild className="mt-4" variant="outline">
-                    <Link to="/patient-portal/appointments">Prendre un rendez-vous</Link>
+                    <Link href="/patient-portal/appointments">Prendre un rendez-vous</Link>
                   </Button>
                 </div>
               )}
@@ -293,7 +295,7 @@ export default function PatientDashboard() {
                 <CardDescription>Échanges avec votre équipe médicale</CardDescription>
               </div>
               <Button variant="ghost" size="sm" asChild>
-                <Link to="/patient-portal/messages">
+                <Link href="/patient-portal/messages">
                   Voir tout
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </Link>
@@ -360,25 +362,25 @@ export default function PatientDashboard() {
           <CardContent>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <Button variant="outline" className="h-auto py-6 flex-col gap-2" asChild>
-                <Link to="/patient-portal/appointments">
+                <Link href="/patient-portal/appointments">
                   <Calendar className="w-6 h-6 text-primary" />
                   <span>Prendre RDV</span>
                 </Link>
               </Button>
               <Button variant="outline" className="h-auto py-6 flex-col gap-2" asChild>
-                <Link to="/patient-portal/messages">
+                <Link href="/patient-portal/messages">
                   <MessageSquare className="w-6 h-6 text-primary" />
                   <span>Nouveau message</span>
                 </Link>
               </Button>
               <Button variant="outline" className="h-auto py-6 flex-col gap-2" asChild>
-                <Link to="/patient-portal/documents">
+                <Link href="/patient-portal/documents">
                   <FileText className="w-6 h-6 text-primary" />
                   <span>Mes documents</span>
                 </Link>
               </Button>
               <Button variant="outline" className="h-auto py-6 flex-col gap-2" asChild>
-                <Link to="/patient-portal/profile">
+                <Link href="/patient-portal/profile">
                   <User className="w-6 h-6 text-primary" />
                   <span>Mon profil</span>
                 </Link>

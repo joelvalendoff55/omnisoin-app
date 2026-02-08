@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { 
@@ -108,7 +110,7 @@ export function EncounterPatientContext({ encounter }: EncounterPatientContextPr
                   </div>
                 </div>
               </div>
-              <Link to={`/patients/${patientId}`}>
+              <Link href={`/patients/${patientId}`}>
                 <Button variant="outline" size="sm">
                   <ExternalLink className="h-4 w-4 mr-1" />
                   Dossier
