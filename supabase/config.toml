@@ -1,0 +1,34 @@
+project_id = "uueayfajjnvmkfpgrlkj"
+
+[functions.trigger-summary]
+verify_jwt = false
+
+[functions.clinical-suggestions]
+verify_jwt = false
+
+[functions.check-3cx-status]
+verify_jwt = false
+
+[functions.airtable-sync]
+verify_jwt = false
+
+[functions.notion-sync]
+verify_jwt = false
+
+[functions.analyze-transcript]
+verify_jwt = false
+
+[functions.document-ocr]
+verify_jwt = false
+
+[functions.extract-patient-pdf]
+verify_jwt = false
+
+[functions.send-notification]
+verify_jwt = false
+
+[functions.daily-summary-cron]
+verify_jwt = false
+
+[functions.create-super-admin]
+verify_jwt = false

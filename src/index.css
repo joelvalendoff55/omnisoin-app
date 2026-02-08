@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medical Dashboard Design System - Clean, Professional Healthcare Theme */
+
+@layer base {
+  :root {
+    /* Medical blue-teal palette */
+    --background: 210 33% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary: Medical Teal */
+    --primary: 187 65% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft Blue-Gray */
+    --secondary: 210 25% 95%;
+    --secondary-foreground: 215 25% 25%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 50%;
+
+    /* Accent: Healthcare Blue */
+    --accent: 200 75% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success: Medical Green */
+    --success: 152 60% 42%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning: Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 187 65% 42%;
+
+    --radius: 0.75rem;
+
+    /* Semantic status colors (operational) */
+    --status-urgent: 0 72% 55%;
+    --status-attention: 38 92% 50%;
+    --status-ok: 152 60% 42%;
+    --status-inactive: 215 15% 60%;
+
+    /* Custom medical colors */
+    --medical-teal: 187 65% 42%;
+    --medical-teal-light: 187 60% 95%;
+    --medical-blue: 200 75% 50%;
+    --medical-blue-light: 200 70% 95%;
+    --medical-green: 152 60% 42%;
+    --medical-green-light: 152 55% 95%;
+
+    /* Sidebar */
+    --sidebar-background: 215 25% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 187 65% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 22%;
+    --sidebar-accent-foreground: 210 25% 90%;
+    --sidebar-border: 215 20% 25%;
+    --sidebar-ring: 187 65% 50%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(187 65% 42%), hsl(200 75% 50%));
+    --gradient-success: linear-gradient(135deg, hsl(152 60% 42%), hsl(165 55% 48%));
+    --gradient-sidebar: linear-gradient(180deg, hsl(215 25% 15%), hsl(215 30% 12%));
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 25% 95%;
+
+    --card: 215 28% 12%;
+    --card-foreground: 210 25% 95%;
+
+    --popover: 215 28% 12%;
+    --popover-foreground: 210 25% 95%;
+
+    --primary: 187 60% 50%;
+    --primary-foreground: 215 30% 8%;
+
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 25% 90%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 200 70% 55%;
+    --accent-foreground: 215 30% 8%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 55% 48%;
+    --success-foreground: 215 30% 8%;
+
+    --warning: 38 85% 55%;
+    --warning-foreground: 215 30% 8%;
+
+    --border: 215 25% 22%;
+    --input: 215 25% 22%;
+    --ring: 187 60% 50%;
+
+    --sidebar-background: 215 30% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 187 60% 50%;
+    --sidebar-primary-foreground: 215 30% 8%;
+    --sidebar-accent: 215 28% 15%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 215 25% 15%;
+    --sidebar-ring: 187 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-sm;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-sidebar {
+    background: var(--gradient-sidebar);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Cockpit zones */
+  .cockpit-zone {
+    @apply bg-card rounded-lg border border-border/50 overflow-hidden;
+  }
+
+  .cockpit-zone-priority {
+    @apply cockpit-zone border-l-4 border-l-primary;
+  }
+
+  .cockpit-zone-header {
+    @apply flex items-center justify-between px-4 py-3 bg-muted/30 border-b border-border/30;
+  }
+
+  .cockpit-zone-content {
+    @apply p-4;
+  }
+
+  /* Status indicators - semantic only */
+  .status-urgent {
+    @apply text-destructive;
+  }
+
+  .status-attention {
+    @apply text-warning;
+  }
+
+  .status-ok {
+    @apply text-success;
+  }
+
+  .status-inactive {
+    @apply text-muted-foreground;
+  }
+
+  .status-dot {
+    @apply w-2.5 h-2.5 rounded-full flex-shrink-0;
+  }
+
+  .status-dot-urgent {
+    @apply status-dot bg-destructive;
+  }
+
+  .status-dot-attention {
+    @apply status-dot bg-warning;
+  }
+
+  .status-dot-ok {
+    @apply status-dot bg-success;
+  }
+
+  .status-dot-inactive {
+    @apply status-dot bg-muted-foreground/40;
+  }
+
+  /* Patient list items */
+  .patient-item {
+    @apply flex items-center gap-3 p-3 rounded-lg border border-border/30 bg-card hover:bg-muted/30 transition-colors cursor-pointer;
+  }
+
+  .patient-item-urgent {
+    @apply patient-item border-l-4 border-l-destructive;
+  }
+
+  .patient-item-attention {
+    @apply patient-item border-l-4 border-l-warning;
+  }
+
+  /* Quick action buttons */
+  .quick-action {
+    @apply flex flex-col items-center gap-2 p-4 rounded-lg border border-border/50 bg-card hover:bg-primary/5 hover:border-primary/30 transition-all cursor-pointer;
+  }
+
+  .quick-action-icon {
+    @apply w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary;
+  }
+
+  /* Page layouts */
+  .page-header {
+    @apply pb-4 border-b border-border/50 mb-6;
+  }
+
+  .page-toolbar {
+    @apply flex flex-wrap items-center gap-3 p-3 bg-muted/30 rounded-lg border border-border/30;
+  }
+
+  /* Navigation */
+  .nav-section-label {
+    @apply text-[10px] font-semibold uppercase tracking-wider text-sidebar-foreground/40 px-3 pt-4 pb-1.5;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2.5 px-3 py-2 rounded-md text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-all duration-150;
+  }
+
+  .nav-link-active {
+    @apply bg-sidebar-primary/15 text-sidebar-primary font-medium border-l-2 border-sidebar-primary rounded-l-none;
+  }
+
+  /* Patient cards */
+  .patient-card {
+    @apply bg-card rounded-lg border border-border/50 p-4 transition-all duration-150 hover:shadow-md hover:border-primary/30 cursor-pointer;
+  }
+
+  .patient-card-archived {
+    @apply opacity-60 bg-muted/30;
+  }
+
+  /* Stat cards */
+  .stat-card {
+    @apply bg-card rounded-lg p-4 border border-border/50 transition-all duration-200;
+  }
+
+  .stat-card-value {
+    @apply text-2xl font-bold;
+  }
+
+  .stat-card-label {
+    @apply text-sm text-muted-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full hover:bg-muted-foreground/30 transition-colors;
+}
+
+/* Animation keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.3s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Stagger animations for lists */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
