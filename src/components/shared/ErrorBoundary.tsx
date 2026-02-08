@@ -46,6 +46,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <div className="flex items-center gap-2 text-sm text-muted-foreground p-2">
             <AlertTriangle className="h-4 w-4" />
             <span>{this.props.errorMessage || 'Données temporairement indisponibles'}</span>
+              {this.state.error && <pre style={{fontSize:'10px',marginTop:'8px',whiteSpace:'pre-wrap',maxHeight:'200px',overflow:'auto'}}>{String(this.state.error)}</pre>}
           </div>
         );
       }
