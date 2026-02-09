@@ -81,7 +81,7 @@ export function useRole(): UseRoleResult {
     isAdmin: roles.includes('admin'),
     isCoordinator: roles.includes('coordinator'),
     isPractitioner: roles.includes('practitioner'),
-    isAssistant: roles.includes('assistant'),
+    isAssistant: roles.includes('assistant') || roles.includes('practitioner'),
   }), [roles]);
 
   return {
