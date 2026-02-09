@@ -13,6 +13,7 @@ interface StructureData {
   address: string;
   postalCode: string;
   city: string;
+    country: string;
   phone: string;
   email: string;
   website: string;
@@ -223,6 +224,12 @@ export function StructureSettingsTab({
                 disabled={!isAdmin}
               />
             </div>
+                      <Input
+            value={structure.country}
+            onChange={(e) => updateField('country', e.target.value)}
+            placeholder="France"
+            disabled={!isAdmin}
+          />
           </div>
 
           {/* Contact */}
