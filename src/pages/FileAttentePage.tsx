@@ -427,11 +427,11 @@ export default function FileAttentePage() {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {/* Total actifs - card principale */}
           <Card className="border-primary/50 bg-primary/5">
             <CardContent className="pt-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center text-center gap-1">
                 <div className="p-2 rounded-lg bg-primary/10">
                   <Users className="h-5 w-5 text-primary" />
                 </div>
@@ -445,7 +445,7 @@ export default function FileAttentePage() {
 
           <Card>
             <CardContent className="pt-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center text-center gap-1">
                 <div className="p-2 rounded-lg bg-blue-500/10">
                   <Clock className="h-5 w-5 text-blue-600" />
                 </div>
@@ -459,7 +459,7 @@ export default function FileAttentePage() {
 
           <Card>
             <CardContent className="pt-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center text-center gap-1">
                 <div className="p-2 rounded-lg bg-green-500/10">
                   <Activity className="h-5 w-5 text-green-600" />
                 </div>
@@ -473,7 +473,7 @@ export default function FileAttentePage() {
 
           <Card>
             <CardContent className="pt-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center text-center gap-1">
                 <div className="p-2 rounded-lg bg-orange-500/10">
                   <Clock className="h-5 w-5 text-orange-600" />
                 </div>
@@ -487,7 +487,7 @@ export default function FileAttentePage() {
 
           <Card>
             <CardContent className="pt-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center text-center gap-1">
                 <div className="p-2 rounded-lg bg-red-500/10">
                   <AlertTriangle className="h-5 w-5 text-red-600" />
                 </div>
@@ -501,7 +501,7 @@ export default function FileAttentePage() {
 
           <Card>
             <CardContent className="pt-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center text-center gap-1">
                 <div className="p-2 rounded-lg bg-orange-500/10">
                   <AlertTriangle className="h-5 w-5 text-orange-600" />
                 </div>
